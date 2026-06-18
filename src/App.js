@@ -5,7 +5,7 @@ import { testConnection } from './services/api';
 
 function App() {
     const [token, setToken] = useState(null);
-    const [userId, setUserId] = useState(null);
+    const [, setUserId] = useState(null);
 
     // Test backend connection on load
     useEffect(() => {
