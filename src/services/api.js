@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const API_URL = 'http://localhost:8000/api';
+const API_URL = 'https://expense-tracker-backend-y7xz.onrender.com/api';
 
 export const register = (email, password) => {
     return axios.post(`${API_URL}/auth/register`, { email, password });
@@ -34,7 +34,7 @@ export const deleteExpense = (id, token) => {
 // TEST FUNCTION - Remove after testing
 export const testConnection = async () => {
     try {
-        const response = await axios.get('https://expense-tracker-backend-y7xz.onrender.com');
+        const response = await axios.get('https://expense-tracker-backend-y7xz.onrender.com/');
         console.log('✅ Backend connected:', response.data);
         return true;
     } catch (error) {
