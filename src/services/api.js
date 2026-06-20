@@ -34,7 +34,7 @@ export const deleteExpense = (id, token) => {
 // TEST FUNCTION - Remove after testing
 export const testConnection = async () => {
     try {
-        const response = await axios.get('http://localhost:8000/');
+        const response = await axios.get('https://expense-tracker-backend-y7xz.onrender.com');
         console.log('✅ Backend connected:', response.data);
         return true;
     } catch (error) {
