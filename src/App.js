@@ -5,17 +5,12 @@ import { testConnection } from './services/api';
 
 function App() {
     const [token, setToken] = useState(null);
-    const [, setUserId] = useState(null);
 
-    // Test backend connection on load
     useEffect(() => {
         const savedToken = localStorage.getItem('token');
         if (savedToken) {
             setToken(savedToken);
-            setUserId(localStorage.getItem('user_id'));
         }
-
-        // Test backend
         testConnection();
     }, []);
 
@@ -24,7 +19,7 @@ function App() {
             {token ? (
                 <Dashboard token={token} setToken={setToken} />
             ) : (
-                <Login setToken={setToken} setUserId={setUserId} />
+                <Login setToken={setToken} setUserId={() => {}} />
             )}
         </div>
     );
